@@ -1,0 +1,3 @@
+<div class="border-red p-8 pt-2 border-t-8 bg-white mb-6 rounded-lg shadow-lg">
+  <div id="math" class="container"></div>
+</div>

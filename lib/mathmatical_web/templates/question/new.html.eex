@@ -1,0 +1,3 @@
+<div class="container mx-auto">
+  <%= render "form.html", conn: @conn, changeset: @changeset, path: Routes.question_path(@conn, :create), title: "Add Question", btn_label: "Create Question", question_id: nil %>
+</div>

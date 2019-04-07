@@ -1,0 +1,25 @@
+<div class="container mx-auto mt-5">
+  <div class="text-right">
+    <%= link "Add Question", to: Routes.question_path(@conn, :new), class: "bg-blue hover:bg-blue-dark text-white font-bold py-2 px-4 rounded" %>
+  </div>
+  <table class=" sm:block w-full text-left mt-4 rounded" style="border-collapse:collapse">
+    <thead class="w-full">
+      <tr class="w-full">
+        <th class="rounded-tl-lg w-2/5 py-4 px-6 bg-grey-darker font-sans font-medium uppercase text-sm text-white border-b border-grey-light">Question</th>
+        <th class="w-3/5 py-4 px-6 bg-grey-darker font-sans font-medium uppercase text-sm text-white border-b border-grey-light">Answer</th>
+        <th class="rounded-tr-lg w-1/5 py-4 px-6 bg-grey-darker font-sans font-medium uppercase text-sm text-white border-b border-grey-light">&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= for q <- @questions do %>
+        <tr class="hover:bg-grey-lightest">
+          <td class="py-4 px-4 border-b border-grey-light">
+            <%= q.question %>
+          </td>
+          <td class="py-4 px-6 border-b border-grey-light"><%= q.answer %></td>
+          <td class="py-4 px-6 border-b border-grey-light"><%= link "Edit", to: Routes.question_path(@conn, :edit, q.id), class: "text-black no-underline font-bold" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
